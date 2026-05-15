@@ -1,0 +1,15 @@
+# Frontend junk
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Backend junk (Python)
+backend/__pycache__/
+backend/.venv/
+backend/.env
+backend/*.pyc
+
+# System / IDE junk
+.vscode/
+.DS_Store
+Thumbs.db
