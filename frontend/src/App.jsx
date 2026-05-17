@@ -73,7 +73,27 @@ export default function App() {
 
 // Stiluri inline rapide ca să nu ne batem capul cu CSS acum
 const styles = {
-  container: { maxWidth: '600px', margin: '50px auto', padding: '20px', textAlign: 'center', fontFamily: 'Arial, sans-serif', color: '#fff', backgroundColor: '#1a1a2e', borderRadius: '12px' },
+  // Ăsta o să coloreze TOT ecranul în închis, indiferent de rezoluție
+  pageWrapper: {
+    backgroundColor: '#0f0f1e', // Un pic mai închis decât cardul, ca să dea contrast
+    minHeight: '100vh',
+    width: '100%',
+    margin: 0,
+    padding: '20px',
+    boxSizing: 'border-box'
+  },
+  container: { 
+    maxWidth: '600px', 
+    margin: '30px auto', // Am scăzut un pic margin-ul de sus
+    padding: '20px', 
+    textAlign: 'center', 
+    fontFamily: 'Arial, sans-serif', 
+    color: '#fff', 
+    backgroundColor: '#1a1a2e', 
+    borderRadius: '12px',
+    boxShadow: '0 4px 20px rgba(0,0,0,0.5)' // Un pic de umbră fină
+  },
+  // restul rămân la fel...
   title: { color: '#e94560', marginBottom: '10px' },
   subtitle: { color: '#8a8a9e', marginBottom: '30px' },
   card: { display: 'flex', gap: '10px', justifyContent: 'center', marginBottom: '30px' },
