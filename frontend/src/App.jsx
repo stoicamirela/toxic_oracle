@@ -37,6 +37,7 @@ export default function App() {
   };
 
   return (
+  <div style={styles.pageWrapper}> {/* Wrapper-ul ăsta nou salvează situația */}
     <div style={styles.container}>
       <h1 style={styles.title}>🔮 Toxic Oracle 🔮</h1>
       <p style={styles.subtitle}>Află adevărul nuanțat despre zodia ta. Nu o să-ți placă.</p>
@@ -66,7 +67,8 @@ export default function App() {
         </div>
       )}
     </div>
-  );
+  </div>
+);
 }
 
 // Stiluri inline rapide ca să nu ne batem capul cu CSS acum
