@@ -1,16 +1,23 @@
-# React + Vite
+[FIRST ITERATION OF THE APPLICATION - More development to come.]
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This needs to be tested only locally as it is not hosted on anything, hence it is mentioned it is the first iteration of this app.
 
-Currently, two official plugins are available:
+Tech stack used for running: npm, React, tailwindcss, googleAPI.
+1. for linux
+opnening the Terminal, write the command ```sudo apt install nodejs```
+2. for windows install from the website
+Check installation with commands ```node --v``` & ```npm --v```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```cd frontend```
+```npm install``` -> this installs the packages included in package.json
+For your personal google API:
+The google API key is created from https://aistudio.google.com/ -> click "Create API key", give a name to your project, copy the new key and insert into your .env file.
+VITE_GEMINI_API_KEY=insert_copied_google_api_key
 
-## React Compiler
+Finally test the app with the comand ```npm run dev```, copy the url from terminal into your browser and enjoy google's output.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+For demo, watch the demo.mp4.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![state_1](state_1.png)
+![state_2](state_2.png)
+![state_3](state_3.png)

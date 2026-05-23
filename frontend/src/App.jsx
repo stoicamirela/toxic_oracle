@@ -2,68 +2,65 @@ import { useState } from 'react';
 import { GoogleGenAI } from "@google/genai";
 import ReactMarkdown from 'react-markdown';
 
-// Inițializăm AI-ul cu cheia din .env
+// Initalizing the Google GenAI client with the API key from environment variables
 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
-const ZODII = [
-  "Berbec", "Taur", "Gemeni", "Rac", "Leu", "Fecioară", 
-  "Balanță", "Scorpion", "Săgetător", "Capricorn", "Vărsător", "Pești"
-];
+const zodiac = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"];
 
 export default function App() {
-  const [zodieSelectata, setZodieSelectata] = useState("");
-  const [predictie, setPredictie] = useState("");
+  const [selectedZodiac, setselectedZodiac] = useState("");
+  const [prediction, setPrediction] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const cerePredictia = async () => {
-    if (!zodieSelectata) return;
+  const askPrediction = async () => {
+    if (!selectedZodiac) return;
     
     setLoading(true);
-    setPredictie("");
+    setPrediction("");
     
     try {
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
-        contents: `Fii un astrolog extrem de toxic, mistic, ironic și sarcastic. Generează o predicție/descriere scurtă și rea (dar amuzantă) pentru zodia ${zodieSelectata}. Folosește formatare markdown (liste, bold-uri) unde e cazul. Răspunde în română.`,
+        contents: `Be an extremely toxic, mystical, ironic, and sarcastic astrologer. Generate a short, mean (but funny) prediction/description for the zodiac ${selectedZodiac}. Use markdown formatting (lists, bold) where appropriate. Respond in English.`,
       });
       
-      setPredictie(response.text);
+      setPrediction(response.text);
     } catch (error) {
       console.error(error);
-      setPredictie("Planetele sunt aliniate prost sau ai uitat să schimbi cheia de API. Mai încearcă.");
+      setPrediction("The planets are badly aligned or you forgot to change the API key. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-  <div style={styles.pageWrapper}> {/* Wrapper-ul ăsta nou salvează situația */}
+  <div style={styles.pageWrapper}>
     <div style={styles.container}>
       <h1 style={styles.title}>🔮 Toxic Oracle 🔮</h1>
-      <p style={styles.subtitle}>Află adevărul nuanțat despre zodia ta. Nu o să-ți placă.</p>
+      <p style={styles.subtitle}>Discover the real truth about your zodiac. You won't like it.</p>
 
       <div style={styles.card}>
         <select 
-          value={zodieSelectata} 
-          onChange={(e) => setZodieSelectata(e.target.value)}
+          value={selectedZodiac} 
+          onChange={(e) => setselectedZodiac(e.target.value)}
           style={styles.select}
         >
-          <option value="">Alege-ți zodia pierzaniei...</option>
-          {ZODII.map(z => <option key={z} value={z}>{z}</option>)}
+          <option value="">Choose your doomed zodiac...</option>
+          {zodiac.map(z => <option key={z} value={z}>{z}</option>)}
         </select>
 
         <button 
-          onClick={cerePredictia} 
-          disabled={loading || !zodieSelectata}
+          onClick={askPrediction} 
+          disabled={loading || !selectedZodiac}
           style={styles.button}
         >
-          {loading ? "Se amestecă veninul..." : "Cere Horoscopul Toxic"}
+          {loading ? "Mixing the venom..." : "Get Toxic Horoscope"}
         </button>
       </div>
 
-      {predictie && (
+      {prediction && (
         <div style={styles.resultBox}>
-          <ReactMarkdown>{predictie}</ReactMarkdown>
+          <ReactMarkdown>{prediction}</ReactMarkdown>
         </div>
       )}
     </div>
@@ -71,11 +68,10 @@ export default function App() {
 );
 }
 
-// Stiluri inline rapide ca să nu ne batem capul cu CSS acum
+// Inline styles
 const styles = {
-  // Ăsta o să coloreze TOT ecranul în închis, indiferent de rezoluție
   pageWrapper: {
-    backgroundColor: '#0f0f1e', // Un pic mai închis decât cardul, ca să dea contrast
+    backgroundColor: '#0f0f1e',
     minHeight: '100vh',
     width: '100%',
     margin: 0,
@@ -84,16 +80,15 @@ const styles = {
   },
   container: { 
     maxWidth: '600px', 
-    margin: '30px auto', // Am scăzut un pic margin-ul de sus
+    margin: '30px auto',
     padding: '20px', 
     textAlign: 'center', 
     fontFamily: 'Arial, sans-serif', 
     color: '#fff', 
     backgroundColor: '#1a1a2e', 
     borderRadius: '12px',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.5)' // Un pic de umbră fină
+    boxShadow: '0 4px 20px rgba(0,0,0,0.5)'
   },
-  // restul rămân la fel...
   title: { color: '#e94560', marginBottom: '10px' },
   subtitle: { color: '#8a8a9e', marginBottom: '30px' },
   card: { display: 'flex', gap: '10px', justifyContent: 'center', marginBottom: '30px' },
