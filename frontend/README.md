@@ -16,8 +16,4 @@ VITE_GEMINI_API_KEY=insert_copied_google_api_key
 
 Finally test the app with the comand ```npm run dev```, copy the url from terminal into your browser and enjoy google's output.
 
-For demo, watch the demo.mp4.
-
-![state_1](state_1.png)
-![state_2](state_2.png)
-![state_3](state_3.png)
+For demo, watch the "demo.mp4".
