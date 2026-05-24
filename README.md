@@ -1,12 +1,15 @@
-[FIRST ITERATION OF THE APPLICATION - More development to come.]
+# Oracle with Google API
 
-This needs to be tested only locally as it is not hosted on anything, hence it is mentioned it is the first iteration of this app.
+## [FIRST ITERATION OF THE APPLICATION - More development to come.]
 
-# installation
+This needs to be run only locally as it is not hosted on anything, hence it is mentioned it is the first iteration of this app.
+
+# Installation
 Tech stack used for running: npm, React, tailwindcss, googleAPI.
 1. for linux
 opnening the Terminal, write the command ```sudo apt install nodejs```
-2. for windows install from the website
+2. for windows install from the official website
+
 Check installation with commands ```node --v``` & ```npm --v```
 
 ```cd frontend```
