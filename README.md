@@ -10,7 +10,7 @@ Tech stack used for running: npm, React, tailwindcss, googleAPI.
 opnening the Terminal, write the command ```sudo apt install nodejs```
 2. for windows install from the official website
 
-Check installation with commands ```node --v``` & ```npm --v```
+Check installation with commands ```node -v``` & ```npm -v```
 
 ```cd frontend```
 

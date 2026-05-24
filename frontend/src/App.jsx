@@ -36,9 +36,8 @@ export default function App() {
   return (
   <div style={styles.pageWrapper}>
     <div style={styles.container}>
-      <h1 style={styles.title}>🔮 Toxic Oracle 🔮</h1>
-      <p style={styles.subtitle}>Discover the real truth about your zodiac. You won't like it.</p>
-
+      <h1 style={styles.title}>🔮 Oracle 🔮</h1>
+      <p style={styles.subtitle}>Discover the real truth about your zodiac.</p>
       <div style={styles.card}>
         <select 
           value={selectedZodiac} 
