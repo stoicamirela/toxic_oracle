@@ -18,7 +18,9 @@ VITE_GEMINI_API_KEY=insert_copied_google_api_key
 
 # Running on local machine
 
-Finally test the app with the comand ```npm run dev```, copy the url from terminal into your browser and enjoy google's output.
+Finally test the app with the comand ```npm run dev```, copy the url from terminal into your browser and enjoy google's output. 
+
+Note: make sure you do cd frontend to run the above command, else npm doesn't find the App.jsx which contains the application.
 
 For demo, watch the "demo.mp4".
 
