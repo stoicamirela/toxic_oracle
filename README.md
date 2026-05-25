@@ -1,6 +1,9 @@
 # Oracle with Google API
 
 ## Installation
+
+Git clone this repo on your local machine and read this readme for running it from terminal.
+
 Tech stack used for running: npm, React, tailwindcss, googleAPI.
 1. for linux
 opnening the Terminal, write the command ```sudo apt install nodejs```
