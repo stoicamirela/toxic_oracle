@@ -21,12 +21,18 @@ Finally test the app with the comand ```npm run dev```, copy the url from termin
 
 Note: make sure you do cd frontend to run the above command, else npm doesn't find the App.jsx which contains the application.
 
-For demo, watch the "demo.mp4".
+Screenshots - default mode is toxic oracle - for switch press the Button "Switch to Positive Oracle":
+### Toxic oracle
+![state_1](state_toxic_1.png)
 
-Homepage looks like this:
-![state_1](state_1.png)
+![state_2](state_toxic_2.png)
 
-After selectin from dropdown and clicking on the button:
-![state_2](state_2.png)
+![state_3](state_toxic_3.png)
 
-![state_3](state_3.png)
+### Positive oracle
+
+![state_positive_1](state_positive_1.png)
+![state_positive_2](state_positive_2.png)
+![state_positive_3](state_positive_3.png)
+
+Note, when you clone on local machine this repo you can adjust the prompt for geminiAPI in the lines 23-24 in the App.jsx file. Enjoy!
